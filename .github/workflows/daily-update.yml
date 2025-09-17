@@ -1,0 +1,44 @@
+name: Daily EC Petitions Update
+
+on:
+  schedule:
+    # Run daily at 12:00 UTC
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  update-petitions:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget
+        
+    - name: Run update script
+      run: |
+        chmod +x run.sh
+        ./run.sh
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Daily update: $(date)"
+          git push
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
