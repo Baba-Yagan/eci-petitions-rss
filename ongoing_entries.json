@@ -1,0 +1,123 @@
+[
+    {
+        "id": 9023,
+        "pubRegNum": "ECI(2025)000003",
+        "year": "2025",
+        "number": "000003",
+        "status": "ONGOING",
+        "languageCode": "EN",
+        "title": "Save your right, save your flight!",
+        "totalSupporters": 2734,
+        "supportLink": "https://eci.ec.europa.eu/054/public/?lg=en",
+        "latestUpdateDate": "08/08/2025 00:00",
+        "lastCall": false
+    },
+    {
+        "id": 8927,
+        "pubRegNum": "ECI(2025)000001",
+        "year": "2025",
+        "number": "000001",
+        "status": "ONGOING",
+        "languageCode": "EN",
+        "title": "HouseEurope! Power to Renovation",
+        "totalSupporters": 34238,
+        "supportLink": "https://eci.ec.europa.eu/052/public/?lg=en",
+        "latestUpdateDate": "05/08/2025 10:04",
+        "lastCall": false,
+        "logo": {
+            "id": 8927,
+            "name": "HouseEurope! Power to Renovation.png",
+            "mimeType": "image/png",
+            "size": 18655
+        }
+    },
+    {
+        "id": 8641,
+        "pubRegNum": "ECI(2024)000011",
+        "year": "2024",
+        "number": "000011",
+        "status": "ONGOING",
+        "languageCode": "EN",
+        "title": "PsychedeliCare",
+        "totalSupporters": 36025,
+        "supportLink": "https://eci.ec.europa.eu/050/public/?lg=en",
+        "latestUpdateDate": "09/09/2025 10:55",
+        "lastCall": false,
+        "logo": {
+            "id": 8641,
+            "name": "25fe5abb-17d1-44a8-93f1-efaff082f183.jpeg",
+            "mimeType": "image/jpeg",
+            "size": 57593
+        }
+    },
+    {
+        "id": 8781,
+        "pubRegNum": "ECI(2024)000006",
+        "year": "2024",
+        "number": "000006",
+        "status": "ONGOING",
+        "languageCode": "EN",
+        "title": "Air-Quotas",
+        "totalSupporters": 5223,
+        "supportLink": "https://eci.ec.europa.eu/051/public/?lg=en",
+        "latestUpdateDate": "08/08/2025 10:44",
+        "lastCall": false,
+        "logo": {
+            "id": 8781,
+            "name": "logoAQfondBleuCC.jpg",
+            "mimeType": "image/jpeg",
+            "size": 31559
+        }
+    },
+    {
+        "id": 8891,
+        "pubRegNum": "ECI(2024)000010",
+        "year": "2024",
+        "number": "000010",
+        "status": "ONGOING",
+        "languageCode": "EN",
+        "title": "ECI for a Water-Smart and Resilient Europe",
+        "totalSupporters": 1936,
+        "supportLink": "https://eci.ec.europa.eu/048/public/?lg=en",
+        "latestUpdateDate": "05/05/2025 21:33",
+        "lastCall": false,
+        "logo": {
+            "id": 8891,
+            "name": "ECI 4Water_Logo_Final.png",
+            "mimeType": "image/png",
+            "size": 44431
+        }
+    },
+    {
+        "id": 8846,
+        "pubRegNum": "ECI(2024)000008",
+        "year": "2024",
+        "number": "000008",
+        "status": "ONGOING",
+        "languageCode": "EN",
+        "title": "Stop Cruelty Stop Slaughter",
+        "totalSupporters": 1273125,
+        "supportLink": "https://eci.ec.europa.eu/047/public/?lg=en",
+        "latestUpdateDate": "11/09/2025 00:00",
+        "lastCall": true,
+        "logo": {
+            "id": 8846,
+            "name": "SCSS LOGO.png",
+            "mimeType": "image/png",
+            "size": 54883
+        }
+    },
+    {
+        "id": 8845,
+        "pubRegNum": "ECI(2024)000009",
+        "year": "2024",
+        "number": "000009",
+        "status": "ONGOING",
+        "languageCode": "EN",
+        "title": "STOP FAKE FOOD: ORIGIN ON LABEL",
+        "totalSupporters": 847947,
+        "supportLink": "https://eci.ec.europa.eu/049/public/?lg=en",
+        "latestUpdateDate": "08/09/2025 00:00",
+        "lastCall": true
+    }
+]
