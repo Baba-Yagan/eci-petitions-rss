@@ -31,16 +31,15 @@ jobs:
         chmod +x run.sh
         ./run.sh
         
-    - name: Create tag and push RSS
+    - name: Commit and push RSS updates
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # Generate timestamp for tag
+        # Generate timestamp
         TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
-        TAG_NAME="rss-$TIMESTAMP"
         
-        # Add RSS file
+        # Add RSS file and database
         git add petitions.xml ongoing_entries.json
         
         # Check if there are changes to commit
@@ -48,12 +47,10 @@ jobs:
           echo "No changes to RSS feed"
         else
           git commit -m "RSS update: $TIMESTAMP"
+          git push origin main
           
-          # Create and push tag
-          git tag -a "$TAG_NAME" -m "RSS feed update $TIMESTAMP"
-          git push origin "$TAG_NAME"
-          
-          echo "Created and pushed tag: $TAG_NAME"
+          echo "RSS feed updated and pushed to main branch"
+          echo "RSS feed available at: https://raw.githubusercontent.com/${{ github.repository }}/main/petitions.xml"
         fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
