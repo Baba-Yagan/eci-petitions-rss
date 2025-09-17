@@ -1,1 +1,2 @@
-# eci-petitions-rss
+# ongoing ECIs rss
+European Citizens' Initiative site ongoing initiatives as a RSS
