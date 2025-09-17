@@ -1,4 +1,4 @@
-name: Daily EC Petitions Update
+name: Daily EC Petitions RSS Update
 
 on:
   schedule:
@@ -13,6 +13,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history for tagging
       
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -29,16 +31,29 @@ jobs:
         chmod +x run.sh
         ./run.sh
         
-    - name: Commit and push changes
+    - name: Create tag and push RSS
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add -A
+        
+        # Generate timestamp for tag
+        TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
+        TAG_NAME="rss-$TIMESTAMP"
+        
+        # Add RSS file
+        git add petitions.xml ongoing_entries.json
+        
+        # Check if there are changes to commit
         if git diff --staged --quiet; then
-          echo "No changes to commit"
+          echo "No changes to RSS feed"
         else
-          git commit -m "Daily update: $(date)"
-          git push
+          git commit -m "RSS update: $TIMESTAMP"
+          
+          # Create and push tag
+          git tag -a "$TAG_NAME" -m "RSS feed update $TIMESTAMP"
+          git push origin "$TAG_NAME"
+          
+          echo "Created and pushed tag: $TAG_NAME"
         fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

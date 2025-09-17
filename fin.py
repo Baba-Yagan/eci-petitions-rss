@@ -1,10 +1,52 @@
 import json
 import os
+from datetime import datetime
+import xml.etree.ElementTree as ET
+
+def generate_rss(entries, output_file="petitions.xml"):
+    """
+    Generate RSS feed from petition entries.
+    """
+    # Create RSS root element
+    rss = ET.Element("rss", version="2.0")
+    channel = ET.SubElement(rss, "channel")
+    
+    # Channel metadata
+    ET.SubElement(channel, "title").text = "EU Petitions - ONGOING"
+    ET.SubElement(channel, "description").text = "Latest ongoing EU petitions from the European Citizens' Initiative"
+    ET.SubElement(channel, "link").text = "https://register.eci.ec.europa.eu"
+    ET.SubElement(channel, "lastBuildDate").text = datetime.now().strftime("%a, %d %b %Y %H:%M:%S GMT")
+    
+    # Add items for each petition
+    for entry in entries:
+        item = ET.SubElement(channel, "item")
+        
+        title = entry.get('title', 'Untitled Petition')
+        ET.SubElement(item, "title").text = title
+        
+        support_link = entry.get('supportLink', '')
+        ET.SubElement(item, "link").text = support_link
+        ET.SubElement(item, "guid").text = str(entry.get('id', ''))
+        
+        total_supporters = entry.get('totalSupporters', 0)
+        description = f"Total supporters: {total_supporters}"
+        if support_link:
+            description += f"\nSupport link: {support_link}"
+        ET.SubElement(item, "description").text = description
+        
+        # Use current time as pub date since we don't have creation date
+        ET.SubElement(item, "pubDate").text = datetime.now().strftime("%a, %d %b %Y %H:%M:%S GMT")
+    
+    # Write RSS to file
+    tree = ET.ElementTree(rss)
+    ET.indent(tree, space="  ", level=0)
+    tree.write(output_file, encoding="utf-8", xml_declaration=True)
+    print(f"RSS feed generated: {output_file}")
 
 def process_entries(data, db_file):
     """
     Processes entries from a source, compares them with an existing database,
-    prints new additions, and updates the database.
+    generates RSS feed, and updates the database.
     """
     # --- 1. Load existing entries from our database file ---
     existing_entries = []
@@ -42,26 +84,20 @@ def process_entries(data, db_file):
             if entry_id and entry_id not in existing_ids:
                 new_additions.append(entry)
 
-    # --- 6. Report the new additions to the user ---
+    # --- 6. Generate RSS feed from all current ongoing entries ---
+    generate_rss(all_current_ongoing)
+    
+    # --- 7. Report the new additions to the user ---
     if new_additions:
-        print("--- New ONGOING Entries Found ---")
-        counter=0
+        print(f"Found {len(new_additions)} new ONGOING entries.")
         for entry in new_additions:
-            message=entry.get('title')
-            support_link=entry.get('supportLink')
-            total_supporters=entry.get('totalSupporters')
-            message+=f"\nlink: {support_link}\ntotal supporters right now:{total_supporters}\n"
-            with open(str(counter)+".txt",'w') as f:
-                f.write(message)
-                counter+=1
-            # Pretty-print the new entry's JSON for readability
-            # print(json.dumps(entry, indent=2, ensure_ascii=False))
-            # print("---------------------------------")
-        print(f"Found {len(new_additions)} new additions.")
+            title = entry.get('title', 'Untitled')
+            supporters = entry.get('totalSupporters', 0)
+            print(f"- {title} ({supporters} supporters)")
     else:
         print("No new ONGOING entries found.")
 
-    # --- 7. Save the complete list of current ONGOING entries back to the DB file ---
+    # --- 8. Save the complete list of current ONGOING entries back to the DB file ---
     # This overwrites the old file, keeping our DB in sync with the latest source
     with open(db_file, 'w', encoding='utf-8') as f:
         json.dump(all_current_ongoing, f, ensure_ascii=False, indent=4)
