@@ -34,8 +34,19 @@ def generate_rss(entries, output_file="petitions.xml"):
             description += f"\nSupport link: {support_link}"
         ET.SubElement(item, "description").text = description
         
-        # Use current time as pub date since we don't have creation date
-        ET.SubElement(item, "pubDate").text = datetime.now().strftime("%a, %d %b %Y %H:%M:%S GMT")
+        # Use first_seen timestamp as pub date, fallback to current time
+        first_seen = entry.get('first_seen')
+        if first_seen:
+            # Parse the ISO timestamp and convert to RSS format
+            try:
+                dt = datetime.fromisoformat(first_seen.replace('Z', '+00:00'))
+                pub_date = dt.strftime("%a, %d %b %Y %H:%M:%S GMT")
+            except (ValueError, AttributeError):
+                # Fallback if timestamp parsing fails
+                pub_date = datetime.now().strftime("%a, %d %b %Y %H:%M:%S GMT")
+        else:
+            pub_date = datetime.now().strftime("%a, %d %b %Y %H:%M:%S GMT")
+        ET.SubElement(item, "pubDate").text = pub_date
     
     # Write RSS to file
     tree = ET.ElementTree(rss)
@@ -59,13 +70,14 @@ def process_entries(data, db_file):
             print(f"Warning: Could not decode JSON from '{db_file}'. Starting fresh.")
             existing_entries = []
 
-    # --- 2. Create a set of existing entry IDs for efficient lookups ---
+    # --- 2. Create a mapping of existing entry IDs to their data for efficient lookups ---
     # We use .get('id') to avoid errors if an entry somehow lacks an 'id'
-    existing_ids = {entry.get('id') for entry in existing_entries}
+    existing_entries_map = {entry.get('id'): entry for entry in existing_entries if entry.get('id')}
 
     # --- 3. Prepare to find new and all current ONGOING entries ---
     new_additions = []
     all_current_ongoing = []
+    current_time = datetime.now().isoformat() + 'Z'
 
     # Check if 'entries' key exists in the source data
     if 'entries' not in data:
@@ -76,13 +88,21 @@ def process_entries(data, db_file):
     for entry in data['entries']:
         # We only care about entries with "ONGOING" status
         if entry.get('status') == "ONGOING":
+            entry_id = entry.get('id')
+            
+            # --- 5. Check if this is a new or existing entry ---
+            if entry_id and entry_id in existing_entries_map:
+                # Existing entry - preserve the first_seen timestamp
+                existing_entry = existing_entries_map[entry_id]
+                entry['first_seen'] = existing_entry.get('first_seen', current_time)
+            else:
+                # New entry - set first_seen to current time
+                entry['first_seen'] = current_time
+                if entry_id:
+                    new_additions.append(entry)
+            
             # Add every ONGOING entry from the source to this list
             all_current_ongoing.append(entry)
-
-            # --- 5. Compare with existing IDs to find new additions ---
-            entry_id = entry.get('id')
-            if entry_id and entry_id not in existing_ids:
-                new_additions.append(entry)
 
     # --- 6. Generate RSS feed from all current ongoing entries ---
     generate_rss(all_current_ongoing)
