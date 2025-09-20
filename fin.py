@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 import xml.etree.ElementTree as ET
 
-def generate_rss(entries, output_file="petitions.xml"):
+def generate_rss(entries, output_file="petitions.rss"):
     """
     Generate RSS feed from petition entries.
     """

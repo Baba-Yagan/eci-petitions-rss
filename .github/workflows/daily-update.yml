@@ -42,7 +42,7 @@ jobs:
         TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
         
         # Add RSS file and database
-        git add petitions.xml ongoing_entries.json
+        git add petitions.rss ongoing_entries.json
         
         # Check if there are changes to commit
         if git diff --staged --quiet; then
@@ -52,7 +52,7 @@ jobs:
           git push origin main
           
           echo "RSS feed updated and pushed to main branch"
-          echo "RSS feed available at: https://raw.githubusercontent.com/${{ github.repository }}/main/petitions.xml"
+          echo "RSS feed available at: https://raw.githubusercontent.com/${{ github.repository }}/main/petitions.rss"
         fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
