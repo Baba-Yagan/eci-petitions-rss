@@ -4,7 +4,7 @@ An automated RSS feed generator for ongoing [European Citizens' Initiative](http
 
 ## 📡 RSS Feed
 
-**Feed URL:** https://raw.githubusercontent.com/Baba-Yagan/eci-petitions-rss/refs/heads/main/petitions.xml
+**Feed URL:** https://raw.githubusercontent.com/Baba-Yagan/eci-petitions-rss/refs/heads/main/petitions.rss
 
 ## 📋 About
 
