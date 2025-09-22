@@ -7,7 +7,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "Save your right, save your flight!",
-        "totalSupporters": 2796,
+        "totalSupporters": 2809,
         "supportLink": "https://eci.ec.europa.eu/054/public/?lg=en",
         "latestUpdateDate": "08/08/2025 00:00",
         "lastCall": false,
@@ -101,7 +101,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "Stop Cruelty Stop Slaughter",
-        "totalSupporters": 1299868,
+        "totalSupporters": 1306677,
         "supportLink": "https://eci.ec.europa.eu/047/public/?lg=en",
         "latestUpdateDate": "11/09/2025 00:00",
         "lastCall": true,
@@ -111,20 +111,6 @@
             "mimeType": "image/png",
             "size": 54883
         },
-        "first_seen": "2025-09-18T05:25:38.647653Z"
-    },
-    {
-        "id": 8845,
-        "pubRegNum": "ECI(2024)000009",
-        "year": "2024",
-        "number": "000009",
-        "status": "ONGOING",
-        "languageCode": "EN",
-        "title": "STOP FAKE FOOD: ORIGIN ON LABEL",
-        "totalSupporters": 867900,
-        "supportLink": "https://eci.ec.europa.eu/049/public/?lg=en",
-        "latestUpdateDate": "08/09/2025 00:00",
-        "lastCall": true,
         "first_seen": "2025-09-18T05:25:38.647653Z"
     }
 ]
