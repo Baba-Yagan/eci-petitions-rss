@@ -7,7 +7,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "Save your right, save your flight!",
-        "totalSupporters": 2835,
+        "totalSupporters": 2844,
         "supportLink": "https://eci.ec.europa.eu/054/public/?lg=en",
         "latestUpdateDate": "08/08/2025 00:00",
         "lastCall": false,
@@ -90,26 +90,6 @@
             "name": "ECI 4Water_Logo_Final.png",
             "mimeType": "image/png",
             "size": 44431
-        },
-        "first_seen": "2025-09-18T05:25:38.647653Z"
-    },
-    {
-        "id": 8846,
-        "pubRegNum": "ECI(2024)000008",
-        "year": "2024",
-        "number": "000008",
-        "status": "ONGOING",
-        "languageCode": "EN",
-        "title": "Stop Cruelty Stop Slaughter",
-        "totalSupporters": 1321927,
-        "supportLink": "https://eci.ec.europa.eu/047/public/?lg=en",
-        "latestUpdateDate": "11/09/2025 00:00",
-        "lastCall": true,
-        "logo": {
-            "id": 8846,
-            "name": "SCSS LOGO.png",
-            "mimeType": "image/png",
-            "size": 54883
         },
         "first_seen": "2025-09-18T05:25:38.647653Z"
     }
