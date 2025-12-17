@@ -7,7 +7,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "Save your right, save your flight!",
-        "totalSupporters": 4394,
+        "totalSupporters": 4399,
         "supportLink": "https://eci.ec.europa.eu/054/public/?lg=en",
         "latestUpdateDate": "08/08/2025 00:00",
         "lastCall": false,
@@ -50,26 +50,6 @@
             "name": "25fe5abb-17d1-44a8-93f1-efaff082f183.jpeg",
             "mimeType": "image/jpeg",
             "size": 57593
-        },
-        "first_seen": "2025-09-18T05:25:38.647653Z"
-    },
-    {
-        "id": 8781,
-        "pubRegNum": "ECI(2024)000006",
-        "year": "2024",
-        "number": "000006",
-        "status": "ONGOING",
-        "languageCode": "EN",
-        "title": "Air-Quotas",
-        "totalSupporters": 7218,
-        "supportLink": "https://eci.ec.europa.eu/051/public/?lg=en",
-        "latestUpdateDate": "03/12/2025 00:00",
-        "lastCall": true,
-        "logo": {
-            "id": 8781,
-            "name": "logoAQfondBleuCC.jpg",
-            "mimeType": "image/jpeg",
-            "size": 31559
         },
         "first_seen": "2025-09-18T05:25:38.647653Z"
     }
