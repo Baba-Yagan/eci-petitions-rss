@@ -1,5 +1,25 @@
 [
     {
+        "id": 8993,
+        "pubRegNum": "ECI(2025)000002",
+        "year": "2025",
+        "number": "000002",
+        "status": "ONGOING",
+        "languageCode": "EN",
+        "title": "Food is a Human Right for All! Guaranteeing healthy, just and sustainable food systems",
+        "totalSupporters": 474,
+        "supportLink": "https://eci.ec.europa.eu/053/public/?lg=en",
+        "latestUpdateDate": "07/01/2026 00:00",
+        "lastCall": false,
+        "logo": {
+            "id": 8993,
+            "name": "GoodFoodJpg_1_11zon.jpg",
+            "mimeType": "image/jpeg",
+            "size": 68878
+        },
+        "first_seen": "2026-01-07T12:22:49.299667Z"
+    },
+    {
         "id": 9023,
         "pubRegNum": "ECI(2025)000003",
         "year": "2025",
@@ -7,7 +27,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "Save your right, save your flight!",
-        "totalSupporters": 4551,
+        "totalSupporters": 4565,
         "supportLink": "https://eci.ec.europa.eu/054/public/?lg=en",
         "latestUpdateDate": "08/08/2025 00:00",
         "lastCall": false,
