@@ -7,7 +7,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "Demand the full suspension of the EU-Israel Association Agreement in view of Israel’s violations of human rights",
-        "totalSupporters": 73463,
+        "totalSupporters": 148291,
         "supportLink": "https://eci.ec.europa.eu/055/public/?lg=en",
         "latestUpdateDate": "13/01/2026 00:00",
         "lastCall": false,
@@ -27,7 +27,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "Food is a Human Right for All! Guaranteeing healthy, just and sustainable food systems",
-        "totalSupporters": 5364,
+        "totalSupporters": 6055,
         "supportLink": "https://eci.ec.europa.eu/053/public/?lg=en",
         "latestUpdateDate": "07/01/2026 15:50",
         "lastCall": false,
@@ -47,7 +47,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "Save your right, save your flight!",
-        "totalSupporters": 4643,
+        "totalSupporters": 4684,
         "supportLink": "https://eci.ec.europa.eu/054/public/?lg=en",
         "latestUpdateDate": "08/08/2025 00:00",
         "lastCall": false,
@@ -70,26 +70,6 @@
             "name": "HouseEurope! Power to Renovation.png",
             "mimeType": "image/png",
             "size": 18655
-        },
-        "first_seen": "2025-09-18T05:25:38.647653Z"
-    },
-    {
-        "id": 8641,
-        "pubRegNum": "ECI(2024)000011",
-        "year": "2024",
-        "number": "000011",
-        "status": "ONGOING",
-        "languageCode": "EN",
-        "title": "PsychedeliCare",
-        "totalSupporters": 69045,
-        "supportLink": "https://eci.ec.europa.eu/050/public/?lg=en",
-        "latestUpdateDate": "12/01/2026 16:11",
-        "lastCall": true,
-        "logo": {
-            "id": 8641,
-            "name": "25fe5abb-17d1-44a8-93f1-efaff082f183.jpeg",
-            "mimeType": "image/jpeg",
-            "size": 57593
         },
         "first_seen": "2025-09-18T05:25:38.647653Z"
     }
