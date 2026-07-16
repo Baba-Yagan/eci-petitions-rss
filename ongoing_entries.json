@@ -7,7 +7,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "EU Stars On My Passport (STAR-PASS)",
-        "totalSupporters": 14887,
+        "totalSupporters": 14909,
         "supportLink": "https://eci.ec.europa.eu/060/public/?lg=en",
         "latestUpdateDate": "08/05/2026 00:00",
         "lastCall": false,
@@ -41,7 +41,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "No more double standards on human rights",
-        "totalSupporters": 4797,
+        "totalSupporters": 4820,
         "supportLink": "https://eci.ec.europa.eu/058/public/?lg=en",
         "latestUpdateDate": "03/03/2026 00:00",
         "lastCall": false,
@@ -94,26 +94,6 @@
         "first_seen": "2026-02-12T12:37:03.665102Z"
     },
     {
-        "id": 9055,
-        "pubRegNum": "ECI(2025)000005",
-        "year": "2025",
-        "number": "000005",
-        "status": "ONGOING",
-        "languageCode": "EN",
-        "title": "Demand the full suspension of the EU-Israel Association Agreement in view of Israel’s violations of human rights",
-        "totalSupporters": 527145,
-        "supportLink": "https://eci.ec.europa.eu/055/public/?lg=en",
-        "latestUpdateDate": "12/05/2026 16:27",
-        "lastCall": false,
-        "logo": {
-            "id": 9055,
-            "name": "ELAECI_JusticeforPalestine_43logo.png",
-            "mimeType": "image/png",
-            "size": 16539
-        },
-        "first_seen": "2026-01-13T12:22:45.013681Z"
-    },
-    {
         "id": 8993,
         "pubRegNum": "ECI(2025)000002",
         "year": "2025",
@@ -141,7 +121,7 @@
         "status": "ONGOING",
         "languageCode": "EN",
         "title": "Save your right, save your flight!",
-        "totalSupporters": 6382,
+        "totalSupporters": 6387,
         "supportLink": "https://eci.ec.europa.eu/054/public/?lg=en",
         "latestUpdateDate": "08/08/2025 00:00",
         "lastCall": false,
